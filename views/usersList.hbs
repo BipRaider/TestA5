@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список пользователей</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+  <ul class="nav nav-pills nav-justified ">
+      <li role="presentation" class="active">
+      <a href="#" >Bonus page</a>
+    </li>
+    <li role="presentation" >
+      <a href="http://localhost:5000">Home</a>
+    </li>
+    <li role="presentation" >
+      <a href="http://localhost:8081/?server=db&username=admin&db=store  " target="_blank" >Database</a>
+    </li>
+  </ul>
+</div>
+
+
+
+
+<div class="container">
+   <h2>Bonus :  {{bonus.title}} </h2>
+   <h2>Bonus point : {{bonus.points}} </h2>
+   <h3>Users : {{bonus.users.length}}</h3>
+    <table class="table table-striped" >
+        <tr><th>name </th><th>uuid</th><th>points</th></tr>
+        {{#each bonus.users}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td> {{this.uuid}}</td>
+                <td>{{this.points}} </td>
+            </tr>
+        {{/each}}
+    </table>
+</div>
+
+
+
+</body>
+<html>

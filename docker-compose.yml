@@ -1,0 +1,43 @@
+version: '3.9'
+
+services:
+  backend:
+    restart: always
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - /usr/src/backend/node_modules
+      - .:/usr/src/backend
+    ports:
+      - 5000:5000
+    depends_on:
+      - db
+    environment:
+      MYSQL_HOST: db
+
+  db:
+    image: mysql
+    restart: always
+    volumes:
+      - ./opt/data:/var/lib/mysql
+      - mysql_config:/etc/mysql
+
+    environment:
+      - 'MYSQL_USER=admin'
+      - 'MYSQL_PASSWORD=password'
+      - 'MYSQL_DATABASE=store'
+      - 'MYSQL_ROOT_PASSWORD=root'
+    ports:
+      - 3306:3306
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
+
+volumes:
+  mysql_config:

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список пользователей</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <style>
+      .btn-center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+          height: 150px;
+          }
+      .btn-my{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        height: 50px;
+        border: 1px solid black;
+      }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <ul class="nav nav-pills nav-justified">
+        <li role="presentation" class="active" >
+            <a href="#">Home</a>
+        </li>
+
+        <li   >
+          <a href="http://localhost:8081/?server=db&username=admin&db=store  " target="_blank">Database</a>
+        </li>
+    </ul>
+</div>
+
+
+<div class="container">
+
+    <div class="form-group  ">
+        <div class="col-md-6">
+
+          <form action="/" method="POST"  >
+            <div class="btn-center">
+              <input type="submit" value="Go roulette"  class="btn btn-my" />
+            </div>
+          </form>
+
+
+        </div>
+    </div>
+
+
+ <div class="form-group">
+   <div class="col-md-6">
+      <h1>Получить список пользователей</h1>
+
+        <form action="/:uuid" method="GET">
+            <div class="input-group">
+
+              <input type="text" name="uuid" / class="form-control" placeholder="Add uuid from table" >
+
+              <span class="input-group-btn">
+              <input type="submit" value="Find Users" class="btn btn-default" />
+              </span>
+            </div>
+        </form>
+    </div>
+ </div>
+
+</div>
+
+
+<div class="row"><div class="container"><h1>Список бонусов</h1></div></div>
+<div class="container">
+  <div class="table-responsive">
+  <table class="table table-striped">
+        <tr><th>title</th><th>uuid</th><th>users</th></tr>
+        {{#each bonuses}}
+            <tr>
+                <td>{{this.title}}</td>
+                <td>{{this.uuid}}</td>
+                <td>got {{this.users.length}} users</td>
+            </tr>
+        {{/each}}
+    </table>
+</div>
+</div>
+
+
+</body>
+<html>
