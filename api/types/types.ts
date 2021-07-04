@@ -1,6 +1,6 @@
 'use strick';
 
-export type TErorr = {
+export type TError = {
   message: string;
   code?: number;
 };

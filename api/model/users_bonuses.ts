@@ -4,7 +4,7 @@ import { connectionDB } from '../db';
 import Bonuses from './bonuses';
 import Users from './users';
 
-import { Model, DataTypes, Optional, Association } from 'sequelize';
+import { Model, DataTypes, Optional } from 'sequelize';
 
 export interface UsersBonusesAttributes {
   id: number;

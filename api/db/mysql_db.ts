@@ -1,7 +1,7 @@
 'use strick';
 
 import config from '../config';
-import { TErorr } from 'api/types/types';
+import { TError } from 'api/types/types';
 import { Sequelize } from 'sequelize';
 
 const { MYSQL_USER, MYSQL_PASSWORD, MYSQL_HOST, MYSQL_PORT, MYSQL_DATABASE } = config;
@@ -24,7 +24,7 @@ const db = (): Sequelize | any => {
 
     return sequelize;
   } catch (error) {
-    const err: TErorr = new Error('Not connect db');
+    const err: TError = new Error('Not connect db');
     err.code = 500;
     return err;
   }

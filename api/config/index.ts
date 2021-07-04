@@ -2,12 +2,12 @@
 
 import path from 'path';
 import dotenv from 'dotenv';
-import { TErorr } from 'api/types/types';
+import { TError } from 'api/types/types';
 
 try {
   dotenv.config({ path: path.join(__dirname, '../../.env') });
 } catch (error) {
-  const err: TErorr = new Error('Dotenv error');
+  const err: TError = new Error('Dotenv error');
   err.code = 500;
   throw err;
 }

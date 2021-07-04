@@ -15,9 +15,9 @@ import { connectionDB } from './db';
 //routers
 import router from './router';
 
-//middlewares
-import middleware from './middlewares';
-import addTable from './middlewares/addTable';
+//middleware
+import middleware from './middleware';
+import addTable from './middleware/addTable';
 
 export default class Server {
   server: any;
