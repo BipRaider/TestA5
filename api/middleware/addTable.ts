@@ -4,8 +4,8 @@ import DBServices from '../services/db.services';
 
 export default () => {
   try {
-    DBServices.creatListBonuses(11);
-    DBServices.creatListUsers(1011);
+    DBServices.creatListBonuses(110);
+    DBServices.creatListUsers(10000);
   } catch (error) {
     throw error;
   }
